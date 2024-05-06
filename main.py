@@ -4,7 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 def calcular_horas_disponiveis(data_inicial_str):
-    data_inicial = datetime.strptime(data_inicial_str, '%d.%m.%yy')
+    data_inicial = datetime.strptime(data_inicial_str, '%d.%m.%Y')
     data_atual = datetime.now()
     diferenca_dias = (data_atual - data_inicial).days + 1 
     horas_disponiveis = diferenca_dias * 10
