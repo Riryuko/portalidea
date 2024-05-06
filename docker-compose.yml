@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.12'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5005:5005"
+    environment:
+      - FLASK_APP=wsgi.py
+      - FLASK_ENV=production
+
+    volumes:
+      - .:/code
+
+volumes:
+  dbdata:
