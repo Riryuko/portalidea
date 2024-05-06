@@ -1,6 +1,6 @@
 """Executando a aplicação"""
 
-from .main import app
+from main import app
 
 app = app()
 
