@@ -4,7 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 def calcular_horas_disponiveis(data_inicial_str):
-    data_inicial = datetime.strptime(data_inicial_str, '%d-%m-%y')
+    data_inicial = datetime.strptime(data_inicial_str, '%d.%m.%yy')
     data_atual = datetime.now()
     diferenca_dias = (data_atual - data_inicial).days + 1 
     horas_disponiveis = diferenca_dias * 10
@@ -12,7 +12,7 @@ def calcular_horas_disponiveis(data_inicial_str):
 
 @app.route('/')
 def home():
-    data_inicial_usuario = '01-01-23' 
+    data_inicial_usuario = '01.01.2023' 
     total_horas = calcular_horas_disponiveis(data_inicial_usuario)
     return f"Total de horas disponíveis do usuário desde {data_inicial_usuario}: {total_horas} horas"
 
