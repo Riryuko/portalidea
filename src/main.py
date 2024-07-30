@@ -48,9 +48,9 @@ def init_app() -> Flask:
     with app.app_context():
         # Registrando as Blueprints: https://flask.palletsprojects.com/en/2.1.x/blueprints/
 
-#        from .blueprints import auth
+        from .blueprints import admin_app
 
-#        app.register_blueprint(auth)
+        app.register_blueprint(admin_app)
 
         # Criando tabelas que não existem e estão
         # presentes na engine.
